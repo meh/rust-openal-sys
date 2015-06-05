@@ -1,0 +1,13 @@
+[package]
+name    = "openal-sys"
+version = "1.16.0-1"
+
+authors = ["meh. <meh@schizofreni.co>"]
+license = "WTFPL"
+
+description = "FFI bindings to OpenAL"
+repository  = "https://github.com/meh/rust-openal-sys"
+keywords    = ["audio"]
+
+[dependencies]
+libc = "*"
