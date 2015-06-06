@@ -25,8 +25,8 @@ pub type ALCdouble = c_double;
 pub type ALCvoid = c_void;
 
 
-pub const ALC_FALSE: c_int = 0;
-pub const ALC_TRUE:  c_int = 1;
+pub const ALC_FALSE: ALCboolean = 0;
+pub const ALC_TRUE:  ALCboolean = 1;
 
 pub const ALC_FREQUENCY: c_int = 0x1007;
 pub const ALC_REFRESH:   c_int = 0x1008;
@@ -61,13 +61,13 @@ pub const ALC_ALL_DEVICES_SPECIFIER:            c_int = 0x1013;
 
 #[link(name = "openal")]
 extern {
-	pub fn alcCreateContext(device: *mut ALCdevice, attrlsit: *const ALCint) -> *mut ALCcontext;
+	pub fn alcCreateContext(device: *const ALCdevice, attrlsit: *const ALCint) -> *mut ALCcontext;
 	pub fn alcMakeContextCurrent(context: *mut ALCcontext) -> ALCboolean;
 	pub fn alcProcessContext(context: *mut ALCcontext);
 	pub fn alcSuspendContext(context: *mut ALCcontext);
 	pub fn alcDestroyContext(context: *mut ALCcontext);
-	pub fn alcGetCurrentContext() -> *mut ALCcontext;
-	pub fn alcGetContextsDevice(context: *mut ALCcontext) -> *mut ALCdevice;
+	pub fn alcGetCurrentContext() -> *const ALCcontext;
+	pub fn alcGetContextsDevice(context: *const ALCcontext) -> *mut ALCdevice;
 
 	pub fn alcOpenDevice(devicename: *const ALCchar) -> *mut ALCdevice;
 	pub fn alcCloseDevice(device: *mut ALCdevice) -> ALCboolean;
