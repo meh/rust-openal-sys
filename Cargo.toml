@@ -1,6 +1,6 @@
 [package]
 name    = "openal-sys"
-version = "1.16.0-1"
+version = "1.16.0-2"
 
 authors = ["meh. <meh@schizofreni.co>"]
 license = "WTFPL"
