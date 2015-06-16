@@ -24,7 +24,6 @@ pub type ALCdouble = c_double;
 
 pub type ALCvoid = c_void;
 
-
 pub const ALC_FALSE: ALCboolean = 0;
 pub const ALC_TRUE:  ALCboolean = 1;
 
@@ -59,7 +58,9 @@ pub const ALC_ENUMERATE_ALL_EXT:                c_int = 1;
 pub const ALC_DEFAULT_ALL_DEVICES_SPECIFIER:    c_int = 0x1012;
 pub const ALC_ALL_DEVICES_SPECIFIER:            c_int = 0x1013;
 
-#[link(name = "openal")]
+#[cfg_attr(target_os = "linux", link(name = "openal"))]
+#[cfg_attr(target_os = "macos", link(name = "OpenAL", kind = "framework"))]
+#[cfg_attr(target_os = "windows", link(name = "OpenAL32"))]
 extern {
 	pub fn alcCreateContext(device: *const ALCdevice, attrlsit: *const ALCint) -> *mut ALCcontext;
 	pub fn alcMakeContextCurrent(context: *mut ALCcontext) -> ALCboolean;
