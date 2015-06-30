@@ -183,7 +183,7 @@ extern {
 	pub fn alSourcePause(source: ALuint);
 
 	pub fn alSourceQueueBuffers(source: ALuint, nb: ALsizei, buffers: *const ALuint);
-	pub fn alSourceUnqueueBuffers(source: ALuint, nb: ALsizei, buffers: *const ALuint);
+	pub fn alSourceUnqueueBuffers(source: ALuint, nb: ALsizei, buffers: *mut ALuint);
 
 	pub fn alGenBuffers(n: ALsizei, buffers: *mut ALuint);
 	pub fn alDeleteBuffers(n: ALsizei, buffers: *const ALuint);
