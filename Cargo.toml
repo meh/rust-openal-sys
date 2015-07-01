@@ -11,3 +11,6 @@ keywords    = ["audio"]
 
 [dependencies]
 libc = "*"
+
+[features]
+static = []

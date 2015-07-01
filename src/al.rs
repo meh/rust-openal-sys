@@ -107,9 +107,6 @@ pub const AL_LINEAR_DISTANCE_CLAMPED:   c_int = 0xD004;
 pub const AL_EXPONENT_DISTANCE:         c_int = 0xD005;
 pub const AL_EXPONENT_DISTANCE_CLAMPED: c_int = 0xD006;
 
-#[cfg_attr(target_os = "linux", link(name = "openal"))]
-#[cfg_attr(target_os = "macos", link(name = "OpenAL", kind = "framework"))]
-#[cfg_attr(target_os = "windows", link(name = "OpenAL32"))]
 extern {
 	pub fn alDopplerFactor(value: ALfloat);
 	pub fn alDopplerVelocity(value: ALfloat);
