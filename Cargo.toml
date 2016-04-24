@@ -1,6 +1,6 @@
 [package]
 name    = "openal-sys"
-version = "1.16.0-4"
+version = "1.16.0"
 
 authors = ["meh. <meh@schizofreni.co>"]
 license = "WTFPL"
@@ -10,7 +10,7 @@ repository  = "https://github.com/meh/rust-openal-sys"
 keywords    = ["audio"]
 
 [dependencies]
-libc = "*"
+libc = "0.2"
 
 [features]
 static = []
